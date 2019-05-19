@@ -8,7 +8,7 @@ class Dashboard extends Component {
             <div>
                 <Navbar bg="light" expend="md">
                     <Navbar.Brand>Would You Rather?</Navbar.Brand>
-                    <Nav>
+                    <Nav className="mr-auto">
                         <Nav.Item><Nav.Link>Unanswered Questions</Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link>Completed Questions</Nav.Link></Nav.Item>
                     </Nav>
