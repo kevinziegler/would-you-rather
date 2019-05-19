@@ -1,4 +1,4 @@
-import { handleLoadUsers, setAuthedUser } from '../actions/authedUser';
+import { handleLoadUsers } from '../actions/authedUser';
 import React, { Component } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
