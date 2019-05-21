@@ -13,6 +13,7 @@ function App({loggedIn}) {
     return (
         <Router>
             <Route path="/" component={Dashboard} />
+            <Route path="/questions/unanswered" component={QuestionList}/>
         </Router>
     );
 }
