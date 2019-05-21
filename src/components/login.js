@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import LoginLoader from './login-loader';
 import LoginForm from './login-form';
 
-// const users = ['Fred', 'Bob', 'George'];
 class Login extends Component {
     componentDidMount() {
         this.props.dispatch(handleLoadUsers());
