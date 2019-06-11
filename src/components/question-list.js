@@ -5,7 +5,7 @@ import QuestionListItem from './question-list-item';
 
 class QuestionList extends Component {
     render() {
-        const { questions } = this.props;
+        const { questions, users } = this.props;
 
         return (
           <div>
@@ -14,15 +14,19 @@ class QuestionList extends Component {
                 <Row className="h-100">
                 <Col className="align-self-center">
                       {
-                          (questions === null)
+                          (questions === null || users === null)
                               ? (
-                                  <Card body>
-                                    <Card.Text style={{textAlign: 'center'}}>
+                                  <Card body style={{textAlign: 'center'}} >
                                       <Spinner animation="border" />
-                                    </Card.Text>
                                   </Card>
                               )
-                              : questions.map( question => (<QuestionListItem question={question} />))
+                              : questions.map(question => (
+                                  <QuestionListItem
+                                    key={question.id}
+                                    question={question}
+                                    user={users[question.author]}
+                                  />
+                              ))
                       }
                 </Col>
                 </Row>
@@ -32,8 +36,11 @@ class QuestionList extends Component {
     }
 }
 
-const mapStateToProps = ({questions}) => {
-    return { questions: questions != null ? Object.values(questions) : null };
+const mapStateToProps = ({questions, users}) => {
+    return {
+        users,
+        questions: questions != null ? Object.values(questions) : null,
+    };
 };
 
 export default connect(mapStateToProps)(QuestionList);

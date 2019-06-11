@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NavUser from './nav-user';
 
-import { handleLoadQuestions } from '../actions/questions';
+import { handleInitialData } from '../actions/shared';
 
 class Dashboard extends Component {
     componentDidMount() {
-        this.props.dispatch(handleLoadQuestions());
+        this.props.dispatch(handleInitialData());
     }
 
     render() {

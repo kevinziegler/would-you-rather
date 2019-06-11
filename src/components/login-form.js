@@ -34,38 +34,36 @@ class LoginForm extends Component {
                         <h4>Welcome to</h4>
                         <h3>Would You Rather?</h3>
                     </Card.Title>
-                    <Card.Text>
-                        <Form onSubmit={(e) => this.setAuthedUser(e)}>
-                            <Form.Row>
-                                <Col md="auto">
-                                    <Form.Control
-                                        as="select"
-                                        value={this.state.selectedUser}
-                                        onChange={(ev) => this.selectUser(ev)}>
-                                        <option key="user-select" disabled>Select a User</option>
-                                        {
-                                            this
-                                                .props
-                                                .users
-                                                .map(u => (
-                                                    <option key={u.id}>{u.name}</option>
-                                                ))
-                                        }
-                                    </Form.Control>
-                                    <Form.Text className="text-muted">
-                                        Please select a user from the list above to log in
-                                    </Form.Text>
-                                </Col>
-                                <Col>
-                                    <Button
-                                        type="submit"
-                                        disabled={!this.state.selectedUserData}>
-                                    Login
-                                    </Button>
-                                </Col>
-                            </Form.Row>
-                        </Form>
-                    </Card.Text>
+                    <Form onSubmit={(e) => this.setAuthedUser(e)}>
+                        <Form.Row>
+                            <Col md="auto">
+                                <Form.Control
+                                    as="select"
+                                    value={this.state.selectedUser}
+                                    onChange={(ev) => this.selectUser(ev)}>
+                                    <option key="user-select" disabled>Select a User</option>
+                                    {
+                                        this
+                                            .props
+                                            .users
+                                            .map(u => (
+                                                <option key={u.id}>{u.name}</option>
+                                            ))
+                                    }
+                                </Form.Control>
+                                <Form.Text className="text-muted">
+                                    Please select a user from the list above to log in
+                                </Form.Text>
+                            </Col>
+                            <Col>
+                                <Button
+                                    type="submit"
+                                    disabled={!this.state.selectedUserData}>
+                                Login
+                                </Button>
+                            </Col>
+                        </Form.Row>
+                    </Form>
                 </Card.Body>
             </Card>
         );

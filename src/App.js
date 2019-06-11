@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Dashboard from './components/dashboard';
 import Login from './components/login';
+import QuestionList from './components/question-list';
 
 function App({loggedIn}) {
     if (!loggedIn) {
@@ -14,6 +15,7 @@ function App({loggedIn}) {
         <Router>
             <Route path="/" component={Dashboard} />
             <Route path="/questions/unanswered" component={QuestionList}/>
+            <Route path="/questions/answered" />
         </Router>
     );
 }
